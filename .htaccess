@@ -1,0 +1,23 @@
+RewriteEngine on
+
+RewriteRule ^nmos-template is-template
+RewriteRule ^nmos-discovery-registration is-04
+RewriteRule ^nmos-device-connection-management is-05
+RewriteRule ^nmos-network-control is-06
+RewriteRule ^nmos-event-tally is-07
+RewriteRule ^nmos-audio-channel-mapping is-08
+RewriteRule ^nmos-system is-09
+RewriteRule ^nmos-authorization is-10
+
+RewriteRule ^nmos-id-timing-model ms-04
+
+RewriteRule ^nmos-grouping bcp-002
+RewriteRule ^nmos-api-security bcp-003
+RewriteRule ^nmos-authorization-practice bcp-003-01
+RewriteRule ^nmos-authorization-practice bcp-003-02
+RewriteRule ^nmos-certificate-provisioning bcp-003-03
+RewriteRule ^nmos-receiver-capabilities bcp-004-01
+
+ErrorDocument 404 /nmos/branches/publish-with-render-dir/404.html
+
+#RewriteRule (.*) /show.php?url=$1 [END]
