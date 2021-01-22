@@ -2,8 +2,8 @@ name: Render
 on:
   push:
     branches:
-        - '^main$'
-        - 'publish-'
+        - main
+        - publish-*
 jobs:
   build:
     runs-on: ubuntu-latest
