@@ -6,7 +6,7 @@ The AMWA develops specifications and technologies to facilitate the deployment a
 These include the Application Specifications for use of MXF, for example AS-11 for delivery of finished media files,
 and the Networked Media Open Specifications (NMOS) for interoperable control and monitoring of IP-based media devices.
 
-[NMOS documentation](/nmos)
+[NMOS Specifications](/nmos)
 
 [AS-11 project page](https://amwa.tv/projects/AS-11.shtml)
 
