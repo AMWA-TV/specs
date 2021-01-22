@@ -18,6 +18,8 @@ RewriteRule ^nmos-authorization-practice bcp-003-02
 RewriteRule ^nmos-certificate-provisioning bcp-003-03
 RewriteRule ^nmos-receiver-capabilities bcp-004-01
 
+RewriteRule ^bcp-002-01 bcp-002/branches/master/best-practice-natural-grouping.html
+
 ErrorDocument 404 /specs-top-level/branches/main/404.html
 
 #RewriteRule (.*) /show.php?url=$1 [END]
