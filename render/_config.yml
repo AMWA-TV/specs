@@ -6,7 +6,7 @@ spec_server: specs.amwa.tv
 amwa_id: SPECS
 
 # Base name for site (typically lower case version of AMWA ID, or the repo name)
-baseurl: /
+baseurl: /specs
 
 # Which release or branch appears in header links and on the home page
 default_tree: branches/main # alternatively e.g. releases/v1.0
