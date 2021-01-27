@@ -20,7 +20,7 @@ RewriteRule ^nmos-authorization-practice bcp-003-02
 RewriteRule ^nmos-certificate-provisioning bcp-003-03
 RewriteRule ^nmos-receiver-capabilities bcp-004-01
 
-RewriteRule ^bcp-002-01 bcp-002/branches/master/best-practice-natural-grouping.html
+RewriteRule ^nmos-testing https://amwa-tv.github.io/nmos-testing [R]
 
 ErrorDocument 404 /404.html
 
