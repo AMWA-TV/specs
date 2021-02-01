@@ -14,13 +14,12 @@ RewriteRule ^nmos-authorization is-10
 RewriteRule ^nmos-id-timing-model ms-04
 
 RewriteRule ^nmos-grouping bcp-002
+RewriteRule ^nmos-natural-grouping bcp-002-01
 RewriteRule ^nmos-api-security bcp-003
-RewriteRule ^nmos-authorization-practice bcp-003-01
+RewriteRule ^nmos-secure-communication bcp-003-01
 RewriteRule ^nmos-authorization-practice bcp-003-02
 RewriteRule ^nmos-certificate-provisioning bcp-003-03
 RewriteRule ^nmos-receiver-capabilities bcp-004-01
-
-RewriteRule ^nmos-testing https://amwa-tv.github.io/nmos-testing [R]
 
 ErrorDocument 404 /404.html
 
