@@ -3,7 +3,7 @@
 <a href="https://github.com/AMWA-TV/nmos/actions?query=workflow%3ALint"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Lint/badge.svg"/></a> 
 <a href="https://github.com/AMWA-TV/nmos/actions?query=workflow%3ARender"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Render/badge.svg"/></a> 
 
-[//]: # "INTRO-START"
+<!-- INTRO-START -->
 
 The Advanced Media Workflow Association exists to help media businesses to improve efficiencies,
 increase agility and drive down costs.  Our worldwide membership comprises electronic media companies,
@@ -19,5 +19,5 @@ and the Networked Media Open Specifications (NMOS) for interoperable control and
 
 [AMWA web site](https://amwa.tv)
 
-[//]: # "INTRO-END"
+<!-- INTRO-END -->
 
