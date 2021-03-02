@@ -20,7 +20,7 @@ RewriteRule ^nmos-authorization-practice bcp-003-02
 RewriteRule ^nmos-certificate-provisioning bcp-003-03
 RewriteRule ^nmos-receiver-capabilities bcp-004-01
 
-RewriteRule ^nmos-authorization-implementation-guide info-authorization
+RewriteRule ^nmos-authorization-implementation-guide info-002
 
 # This needs to be after nmos-authorization-*
 RewriteRule ^nmos-authorization is-10
