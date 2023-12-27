@@ -1,7 +1,7 @@
 # AMWA Specifications
 
-<a href="https://github.com/AMWA-TV/nmos/actions?query=workflow%3ALint"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Lint/badge.svg"/></a> 
-<a href="https://github.com/AMWA-TV/nmos/actions?query=workflow%3ARender"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Render/badge.svg"/></a> 
+<a href="https://github.com/AMWA-TV/specs-top-level/actions?query=workflow%3ALint"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Lint/badge.svg"/></a> 
+<a href="https://github.com/AMWA-TV/specs-top-level/actions?query=workflow%3ARender"><img src="https://github.com/AMWA-TV/specs-top-level/workflows/Render/badge.svg"/></a> 
 
 <!-- INTRO-START -->
 
@@ -15,9 +15,9 @@ and the Networked Media Open Specifications (NMOS) for interoperable control and
 
 [NMOS Specifications](/nmos)
 
-[AS-11 project page](https://amwa.tv/projects/AS-11.shtml)
+[AS-11 project page](https://www.amwa.tv/as-11)
 
-[AMWA web site](https://amwa.tv)
+[AMWA web site](https://www.amwa.tv)
 
 <!-- INTRO-END -->
 
