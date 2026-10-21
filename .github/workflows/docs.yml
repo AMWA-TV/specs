@@ -109,6 +109,6 @@ jobs:
           # use --delete: sibling sites such as /nmos and /in-index must stay.
           REMOTE_PATH: "/var/www/specs.amwa.tv"
         run: |
-          rsync -az \
+          rsync -az --omit-dir-times \
             -e 'ssh -o StrictHostKeyChecking=yes' \
             site/ "${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/"
