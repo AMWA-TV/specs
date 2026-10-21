@@ -109,6 +109,8 @@ jobs:
           # use --delete: sibling sites such as /nmos and /in-index must stay.
           REMOTE_PATH: "/var/www/specs.amwa.tv"
         run: |
-          rsync -az --omit-dir-times \
+          # Do not preserve server-owned metadata (times, ownership, or
+          # permissions); the SSH deployment user may only write file data.
+          rsync -rlz \
             -e 'ssh -o StrictHostKeyChecking=yes' \
             site/ "${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/"
