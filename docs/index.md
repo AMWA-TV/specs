@@ -1,6 +1,6 @@
 # AMWA Specifications
 
-Welcome to the canonical home for specifications and technical documents from the [Advanced Media Workflow Association](https://www.amwa.tv/).
+Welcome to the home for specifications and technical documents from the [Advanced Media Workflow Association](https://www.amwa.tv/).
 
 Use the sites below to browse the current AMWA documentation. Individual repositories are published at their own canonical `specs.amwa.tv` URL, while the indexes provide the best way to discover related documents.
 
@@ -20,6 +20,10 @@ The NMOS site also includes [background documentation](https://specs.amwa.tv/nmo
 ## AMWA Increments
 
 [AMWA Increments](https://specs.amwa.tv/in-index/) are snapshots of ongoing AMWA activity phases. The Increment index links each published document to its repository and current documentation site.
+
+## AS-11 specifications
+
+The [AS-11 specifications](https://www.amwa.tv/as-11) define MXF contribution file formats for delivery of finished media assets.
 
 ## Find a specification
 

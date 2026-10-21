@@ -3,7 +3,7 @@ RewriteEngine on
 # Redirect the former staging tree to the equivalent canonical path while
 # preserving the subpath, trailing slash, and query string.
 RewriteRule ^new(?:/(.*))?$ /$1 [R=301,L,NE]
-
+RewriteRule ^specs/?$ / [R=301,L,NE]
 
 RewriteRule ^nmos-template is-template
 RewriteRule ^nmos-discovery-registration is-04
