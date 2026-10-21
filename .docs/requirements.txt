@@ -1,0 +1,2 @@
+# Dependencies for the top-level AMWA specifications site
+zensical

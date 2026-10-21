@@ -1,0 +1,114 @@
+name: Docs
+
+# Builds the canonical top-level AMWA specifications landing page with
+# Zensical. The legacy render.yml workflow is intentionally retained.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - "publish-*"
+    paths:
+      - "docs/**"
+      - ".docs/**"
+      - "zensical.toml"
+      - ".htaccess"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - ".docs/**"
+      - "zensical.toml"
+      - ".htaccess"
+      - ".github/workflows/docs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build with Zensical
+    runs-on: ubuntu-latest
+    env:
+      TOOLKIT_DIR: .amwa-spec-docs
+      DOCS_DIR: docs
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Check out shared AMWA documentation toolkit
+        uses: actions/checkout@v5
+        with:
+          repository: AMWA-TV/amwa-spec-docs
+          ref: main
+          path: .amwa-spec-docs
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: .docs/requirements.txt
+
+      - name: Install Zensical
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r .docs/requirements.txt
+
+      - name: Apply shared AMWA branding
+        run: bash "${TOOLKIT_DIR}/scripts/apply-branding.sh"
+
+      - name: Build site
+        run: zensical build --strict
+
+      - name: Include server routing rules
+        run: cp .htaccess site/.htaccess
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: site/
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: site
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Publish top-level site to specs.amwa.tv
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          # The top-level site is served directly from the web root. Do not
+          # use --delete: sibling sites such as /nmos and /in-index must stay.
+          REMOTE_PATH: "/var/www/specs.amwa.tv"
+        run: |
+          rsync -az \
+            -e 'ssh -o StrictHostKeyChecking=yes' \
+            site/ "${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/"
